@@ -39,3 +39,22 @@ This project uses [Make](https://www.gnu.org/software/make/). The Makefile has f
 5. Implement the `System`, `Process`, and `Processor` classes, as well as functions within the `LinuxParser` namespace.
 
 6. Submit!
+
+## Bonus Challenge
+
+1. For this project, however, you only need to display aggregate CPU information, which you can find on the "cpu" line of /proc/stat.
+
+If you would like to add individual processor information to your system monitor project, go for it!
+
+2. Measurement Interval
+Once you've parsed /proc/stat and calculated the processor utilization, you've got what you need for this project. Congratulations!
+
+However, when you run your system monitor, you might notice that the process utilization seems very stable. Too stable.
+
+That's because the processor data in /proc/stat is measured since boot. If the system has been up for a long time, a temporary interval of even extreme system utilization is unlikely to change the long-term average statistics very much. This means that the processor could be red-lining right now but the system monitor might still show a relatively underutilized processor, if the processor has spent most of the time since boot in an idle state.
+
+You might want to update the system monitor to report the current utilization of the processor, rather than the long-term average utilization since boot. You would need to measure the difference in system utilization between two points in time relatively close to the present. A formula like:
+
+Δ active time units / Δ total time units
+
+Consider this a bonus challenge that is not required to pass the project.
