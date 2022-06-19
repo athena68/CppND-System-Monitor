@@ -5,8 +5,8 @@ class Processor {
  public:
   float Utilization();  // DONE: See src/processor.cpp
 
-  // TODO: Declare any necessary private members
  private:
+    int cpuid_;
     long int m_idletime = 0;
     long int m_totaltime = 0;
 
